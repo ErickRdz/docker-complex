@@ -31,7 +31,7 @@ services:
       dockerfile: Dockerfile.dev
       context: ./client
     volumes:
-      - /app/modules
+      - /app/node_modules
       - ./client:/app 
   worker:
     build:
@@ -41,5 +41,5 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
     volumes: 
-      - /app/modules
+      - /app/node_modules
       - ./worker:/app
